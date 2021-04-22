@@ -1,4 +1,4 @@
-### this is my personal website
+### this is my blog
 
 #### it is forked from [this template](https://www.free-css.com/free-css-templates/page253/devfolio)
 

@@ -400,6 +400,16 @@
                   </ul>
                 </li>
                 <li>
+                  Steps to bring a local folder into a remote git repo:
+                  <br>
+                  <div class="blockquote">git init</div>
+                  ---> <div class="blockquote">git add .</div>
+                  ---> <div class="blockquote">git commit -m "first commit"</div>
+                  ---> <div class="blockquote">git remote add origin &ltremoterepoURL&gt</div>
+                  ---> <div class="blockquote">git remote -v</div> (just to verify)
+                  ---> <div class="blockquote">git push origin main</div> (if origin/main exists, or <div class="blockquote">git branch -m &ltbranchname&gt</div> to rename local branch and <div class="blockquote">git push origin -u &ltbranchname&gt</div> to add and push to a new branch)
+                </li>
+                <li>
                   Steps to merge branch to <div class="blockquote">master</div> branch:
                   <br>
                   <div class="blockquote">git checkout master</div> (go to <div class="blockquote">master</div> branch)

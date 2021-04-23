@@ -321,6 +321,14 @@
                 <li><nobr class="blockquote">git --version</nobr></li>
                 <li><nobr class="blockquote">git config --global user.name "xxx"</nobr></li>
                 <li><nobr class="blockquote">git config --global user.email "xxx@xxx.xxx"</nobr></li>
+                <li>
+                  <div class="blockquote">
+                    git credential-osxkeychain erase<br>host=github.com<br>protocol=https
+                  </div>
+                  or <nobr class="blockquote">git config --global credential.helper osxkeychain</nobr>
+                  to erase credentials
+                </li>
+                
               </ul>
               Common commands:
               <ul>
@@ -490,7 +498,7 @@
                   </p>
                   <p>
                     The repo name of a "repo page" could be anything,
-                    but the files have to be under the <nobr class="blockquote">gh-pages</nobr> branch in order to be deployed,
+                    but the files have to be under the <nobr class="blockquote">gh-pages</nobr> branch (actually not really..) in order to be deployed,
                     and the link to this page will be
                     <nobr class="blockquote">https://&ltusername&gt.github.io/&ltreponame&gt/</nobr>.
                   </p>

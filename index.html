@@ -96,6 +96,12 @@
             <div class="article-content">
               <ul>
                 <li>
+                  <a href="#ros">ROS</a>
+                </li>
+                <li>
+                  <a href="#ecs-architecture">ECS Architecture</a>
+                </li>
+                <li>
                   Common Tools
                   <ul>
                     <li>
@@ -146,6 +152,125 @@
     </div>
   </section>
   <!--/ Section Blog-Single End /-->
+
+
+<!--/ ROS /-->
+  <section class="blog-wrapper sect-pt4" id="ros">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-box">
+            <div class="post-thumb">
+              <img src="img/divider_cut2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="post-meta">
+              <h1 class="article-title">ROS</h1>
+              <a href="#top">[Back to Top]</a>
+            </div>
+            <div class="article-content">              
+              <ul>
+                <li>Commands
+                  <ul>
+                    <li>rosnode list</li>
+                    <li>rosparam list</li>
+                    <li>rostopic list/echo</li>
+                    <li>rosservice list</li>
+                  </ul>
+                </li>
+                <li>Node
+                  <ul>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </li>
+                <li>Param
+                  <ul>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </li>
+                <li>Topic
+                  <ul>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </li>
+                <li>Service
+                  <ul>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </li>
+                <li>
+                  References: 
+                  <a href="" target="_blank">[1]</a>, 
+                  <a href="" target="_blank">[2]</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ ROS End /-->
+
+<!--/ ECS Architecture /-->
+  <section class="blog-wrapper sect-pt4" id="ecs-architecture">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-box">
+            <div class="post-thumb">
+              <img src="img/divider_cut2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="post-meta">
+              <h1 class="article-title">ECS Architecture</h1>
+              <a href="#top">[Back to Top]</a>
+            </div>
+            <div class="article-content">              
+              <ul>
+                <li>ECS stands for Entity(实体), Component(组件), and System(系统)</li>
+                <li>E, C, S是并列关系，而不是E, C修饰S的关系</li>
+                <li>Entity
+                  <ul>
+                    <li>本质上是一个id，可以被创建、销毁，可以添加、删除组件</li>
+                    <li>生命周期由EntityManager管理，创建、销毁、增删组件都通过EntityManager进行</li>
+                  </ul>
+                </li>
+                <li>Component
+                  <ul>
+                    <li>仅仅包含代表其特性的数据，不包含任何方法</li>
+                    <li>同种类型的Component在内存中紧密排列，在System遍历时减少cache miss</li>
+                    <li>被不同Entity挂载的Component，在内存中对应不同位置；被Entity挂载的同一个SharedComponent，在内存中对应同一位置，适用于很多实体共享同一种资源的情况</li>
+                  </ul>
+                </li>
+                <li>System
+                  <ul>
+                    <li>处理拥有一个或多个相同组件的实体集合，只拥有行为，不存储任何数据</li>
+                    <li>通过依赖注入的方式访问Component</li>
+                  </ul>
+                </li>
+                <li>Compared with OOP:
+                  <ul>
+                    <li>"Is-A" relation ==&gt OOP 继承</li>
+                    <li>"Has-A" relation ==&gt ECS 组合</li>
+                    <li>"组合优于继承"</li>
+                  </ul>
+                </li>
+                <li>
+                  References: 
+                  <a href="https://zhuanlan.zhihu.com/p/30538626" target="_blank">[1]</a>, 
+                  <a href="https://johnyoung404.github.io/2019/06/27/ECS%E6%9E%B6%E6%9E%84%E7%AE%80%E4%BB%8B/" target="_blank">[2]</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ ECS Architecture End /-->
 
   <!--/ Vim /-->
   <section class="blog-wrapper sect-pt4" id="vim">
@@ -469,19 +594,19 @@
                   	<li>(Offline, PKU, Lang: CN) Data Structure and Algorithm</li>
               	  	<li>
               	  	  <a href="https://www.bilibili.com/video/BV1Up411Z7hC?from=search&seid=11933338213800872478" target="_blank">
-              			(Online, HIT, Lang: CN) Computer Networking
-              		  </a>
-              		</li>
+                			(Online, HIT, Lang: CN) Computer Networking
+                		  </a>
+              		  </li>
               	  	<li>
               	  	  <a href="http://www.infocobuild.com/education/audio-video-courses/computer-science/cs162-spring2015-berkeley.html" target="_blank">
-              			(Online, UCB) CS162: Operating Systems and Systems Programming
+              			  (Online, UCB) CS162: Operating Systems and Systems Programming
               		  </a>
-              		</li>
-              		<li>
+              		  </li>
+              		  <li>
               	  	  <a href="https://cs186berkeley.net/" target="_blank">
-              			(TODO, Online, UCB) CS186: Introduction to Database Systems
-              		  </a>
-              		</li>
+                			(TODO, Online, UCB) CS186: Introduction to Database Systems
+                		  </a>
+              		  </li>
               	  </ul>
                 </li>
                 <li>Tools

@@ -475,6 +475,8 @@
                   Local commands:
                   <ul>
                     <li>revert unstaged changes to last committed state <nobr class="blockquote">git checkout xxx.xx</nobr></li>
+                    <li>revert changes in a file to a commit <nobr class="blockquote">git checkout &ltcommitid&gt - xxx.xx</nobr></li>
+                    <li>revert commits <nobr class="blockquote">git revert master~3..master</nobr> or <nobr class="blockquote">git revert B..D</nobr></li>
                     <li>add / delete / rename a file to staged <nobr class="blockquote">git add / rm / mv xxx.xx</nobr></li>
                     <li>
                       unstage changes <nobr class="blockquote">git reset HEAD xxx.xx</nobr>,
@@ -493,9 +495,12 @@
                       not "undo"
                     </li>
                     <li>
-                      squash commits <nobr class="blockquote">git rebase -i master / HEAD~4</nobr>,
+                      squash commits <nobr class="blockquote">git rebase -i master / HEAD~4</nobr> or <nobr class="blockquote">git rebase -i &ltprevcommitid&gt</nobr>,
                       interactive rebase,
                       pick the earliest commit and squash all else
+                    </li>
+                    <li>
+                      delete the most recent commit, without destroying the work you've done <nobr class="blockquote">git reset --soft HEAD~1</nobr>, or delete the most recent commit and remove changes <nobr class="blockquote">git reset --hard HEAD~1</nobr>
                     </li>
                   </ul>
                 </li>
@@ -514,6 +519,9 @@
                     <li>
                       rename a branch <nobr class="blockquote">git branch -m &ltnewname&gt</nobr> for current branch,
                       or <nobr class="blockquote">git branch -m &ltoldname&gt &ltnewname&gt</nobr> otherwise</nobr>
+                    </li>
+                    <li>
+                      add changes to the most recent commit <nobr class="blockquote">git commit --amend --no-edit</nobr> and <nobr class="blockquote">git push -f</nobr>
                     </li>
                   </ul>
                 </li>
@@ -567,6 +575,14 @@
                   ---> <div class="blockquote">git push --delete origin &ltbranchname&gt</div> (delete remote branch)
                   ---> <div class="blockquote">git branch -d &ltbranchname&gt</div> (delete local branch)
                   ---> <div class="blockquote">git push</div>
+                </li>
+                <li>
+                  Steps to rebase a commit <div class="blockquote">&ltupdateid&gt</div> on commit <div class="blockquote">&ltbaseid&gt</div> in <div class="blockquote">master</div> branch:
+                  <br>
+                  <div class="blockquote">git checkout master</div> (go to <div class="blockquote">master</div> branch)
+                  ---> <div class="blockquote">git checkout &ltbaseid&gt</div> (detach to commit <div class="blockquote">base</div>)
+                  ---> <div class="blockquote">git checkout -b &ltbranchname&gt</div> (create new branch)
+                  ---> <div class="blockquote">git cherry-pick &ltupdateid&gt</div>
                 </li>
                 <li>
                   Others:

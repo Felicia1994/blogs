@@ -577,6 +577,18 @@
                   ---> <div class="blockquote">git push</div>
                 </li>
                 <li>
+                  Steps to rebase a branch <div class="blockquote">&ltbranchname&gt</div> on commit <div class="blockquote">&ltbaseid&gt</div> in <div class="blockquote">master</div> branch:
+                  <br>
+                  <div class="blockquote">git checkout master</div> (go to <div class="blockquote">master</div> branch)
+                  ---> <div class="blockquote">git pull</div>
+                  ---> <div class="blockquote">git checkout &ltbaseid&gt</div> (detach to commit <div class="blockquote">base</div>)
+                  ---> <div class="blockquote">git checkout -b &ltbasebranch&gt</div> (create base branch)
+                  ---> <div class="blockquote">git checkout &ltbranchname&gt</div>
+                  ---> <div class="blockquote">git merge &ltbasebranch&gt</div>
+                  ---> <div class="blockquote">git add .</div> and <div class="blockquote">git commit</div> if any conflicts
+                  ---> <div class="blockquote">git push</div>
+                </li>
+                <li>
                   Steps to rebase a commit <div class="blockquote">&ltupdateid&gt</div> on commit <div class="blockquote">&ltbaseid&gt</div> in <div class="blockquote">master</div> branch:
                   <br>
                   <div class="blockquote">git checkout master</div> (go to <div class="blockquote">master</div> branch)

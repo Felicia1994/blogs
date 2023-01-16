@@ -94,6 +94,7 @@
                     <li><a href="#vim">Vim</a></li>
                     <li><a href="#tmux">Tmux</a></li>
                     <li><a href="#git">Git</a></li>
+                    <li><a href="#docker">Docker</a></li>
                   </ul>
                 </li>
                 <li><a href="#cs-related-courses-and-resources">CS-Related Courses and Resources :)</a></li>
@@ -124,7 +125,7 @@
   </section>
   <!--/ Section Blog-Single End /-->
 
-<!--/ Bridge /-->
+  <!--/ Bridge /-->
   <section class="blog-wrapper sect-pt4" id="bridge">
     <div class="container">
       <div class="row">
@@ -166,7 +167,7 @@
   <!--/ Bridge End /-->
 
 
-<!--/ ROS /-->
+  <!--/ ROS /-->
   <section class="blog-wrapper sect-pt4" id="ros">
     <div class="container">
       <div class="row">
@@ -227,7 +228,7 @@
   </section>
   <!--/ ROS End /-->
 
-<!--/ ECS Architecture /-->
+  <!--/ ECS Architecture /-->
   <section class="blog-wrapper sect-pt4" id="ecs-architecture">
     <div class="container">
       <div class="row">
@@ -615,7 +616,126 @@
   </section>
   <!--/ Git End /-->
 
-<!--/ CS-Related Courses and Resources /-->
+  <!--/ Docker /-->
+  <section class="blog-wrapper sect-pt4" id="docker">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-box">
+            <div class="post-thumb">
+              <img src="img/divider_cut2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="post-meta">
+              <h1 class="article-title">Docker</h1>
+              <a href="#top">[Back to Top]</a>
+            </div>
+            <div class="article-content">
+              All commands might need to add <nobr class="blockquote">sudo</nobr> in front.
+              <br>
+              General commands:
+              <ul>
+                <li>
+                  list the Docker version installed <nobr class="blockquote">docker version</nobr>
+                </li>
+                <li>
+                  <nobr class="blockquote">docker info</nobr>
+                </li>
+                <li>
+                  <nobr class="blockquote">docker</nobr> or <nobr class="blockquote">docker help</nobr>
+                </li>
+              </ul>
+              Images-related commands
+              (An image is a combination of a file system and parameters):
+              <ul>
+                <li>
+                  <nobr class="blockquote">docker pull &ltREPOSITORY&gt:&ltTAG&gt</nobr>,
+                  where <nobr class="blockquote">:&ltTAG&gt</nobr> could be ommited if latest
+                </li>
+                <li>
+                  <nobr class="blockquote">&ltREPOSITORY&gt:&ltTAG&gt</nobr>
+                  is then equivalent to <nobr class="blockquote">&ltImageID&gt</nobr>
+                </li>
+                <li>
+                  list all images (or only Image ID's) <nobr class="blockquote">docker images (-p)</nobr>
+                </li>
+                <li>
+                  list the details of an image <nobr class="blockquote">docker inspect &ltREPOSITORY&gt:&ltTAG&gt</nobr>
+                </li>
+                <li>
+                  <nobr class="blockquote">docker run &ltREPOSITORY&gt:&ltTAG&gt</nobr>,
+                  or in interactive mode <nobr class="blockquote">docker run -it &ltREPOSITORY&gt:&ltTAG&gt /bin/bash</nobr>,
+                  or map the ports by <nobr class="blockquote">docker run -p &ltport&gt:&ltport&gt &ltREPOSITORY&gt:&ltTAG&gt</nobr>;
+                  this will pull the docker first if not yet
+                </li>
+                <li>
+                  <nobr class="blockquote">docker exec -it &ltImageID&gt /bin/bash</nobr>
+                </li>
+                <li>
+                  list all commands that were run with the image via a container <nobr class="blockquote">docker history &ltImageID&gt</nobr>
+                </li>
+                <li>
+                  remove an image <nobr class="blockquote">docker rmi &ltImageID&gt</nobr>
+                </li>
+              </ul>
+              Containers-related commands
+              (Containers are instances of Docker images that can be run using the Docker run command):
+              <ul>
+                <li>
+                  <nobr class="blockquote">&ltContainerName&gt</nobr>
+                  is equivalent to <nobr class="blockquote">&ltContainerID&gt</nobr>
+                </li>
+                <li>
+                  list all running (or all) containers <nobr class="blockquote">docker ps (-a)</nobr>
+                </li>
+                <li>
+                  list top-level processes within the container <nobr class="blockquote">docker top &ltContainerID&gt</nobr>
+                </li>
+                <li>
+                  show the statistics (CPU and memory utilization) of a running container <nobr class="blockquote">docker stats &ltContainerID&gt</nobr>
+                </li>
+                <li>
+                  list the details of a container  <nobr class="blockquote">docker inspect &ltContainerID&gt</nobr>
+                </li>
+                <li>
+                  <nobr class="blockquote">docker attach &ltContainerID&gt</nobr>
+                </li>
+                <li>
+                  <nobr class="blockquote">docker start &ltContainerID&gt</nobr> and 
+                  <nobr class="blockquote">docker stop &ltContainerID&gt</nobr>
+                </li>
+                <li>
+                  <nobr class="blockquote">docker pause &ltContainerID&gt</nobr> and
+                  <nobr class="blockquote">docker unpause &ltContainerID&gt</nobr>
+                </li>
+                <li>
+                  <nobr class="blockquote">docker kill &ltContainerID&gt</nobr> and
+                  <nobr class="blockquote">docker rm &ltContainerID&gt</nobr>
+                </li>
+              </ul>
+              Architectures of Virtual Machines vs. Dockers:
+              <ul>
+                <li>
+                  <img src="img/virtual_machine.png" width="300">
+                  vs.
+                  <img src="img/docker.png" width="300">
+                </li>
+              </ul>
+              References: 
+              <ul>
+                <li>
+                  <a href="https://www.tutorialspoint.com/docker/index.htm" target="_blank">[1]</a>, 
+                  <a href="https://docs.docker.com/engine/reference/commandline/cli/" target="_blank">[2]</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Docker End /-->
+
+  <!--/ CS-Related Courses and Resources /-->
   <section class="blog-wrapper sect-pt4" id="cs-related-courses-and-resources">
     <div class="container">
       <div class="row">
@@ -749,10 +869,6 @@
   </section>
   <!--/ CS-Related Courses and Resources End /-->
 
-
-
-
-
   <!--/ Create Github Pages /-->
   <section class="blog-wrapper sect-pt4" id="create-github-pages">
     <div class="container">
@@ -808,10 +924,6 @@
     </div>
   </section>
   <!--/ Create Github Pages End /-->
-
-
-
-
 
   <!--/ Section Contact-Footer Star /-->
   <section id="bottom" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(img/gallery.jpg)">

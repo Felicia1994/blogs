@@ -668,9 +668,6 @@
                   this will pull the docker first if not yet
                 </li>
                 <li>
-                  <nobr class="blockquote">docker exec -it &ltImageID&gt /bin/bash</nobr>
-                </li>
-                <li>
                   list all commands that were run with the image via a container <nobr class="blockquote">docker history &ltImageID&gt</nobr>
                 </li>
                 <li>
@@ -697,7 +694,8 @@
                   list the details of a container  <nobr class="blockquote">docker inspect &ltContainerID&gt</nobr>
                 </li>
                 <li>
-                  <nobr class="blockquote">docker attach &ltContainerID&gt</nobr>
+                  <nobr class="blockquote">docker attach &ltContainerID&gt</nobr> and
+                  <nobr class="blockquote">docker exec -it &ltContainerName&gt /bin/bash</nobr>
                 </li>
                 <li>
                   <nobr class="blockquote">docker start &ltContainerID&gt</nobr> and 
